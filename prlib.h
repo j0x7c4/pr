@@ -13,8 +13,10 @@ typedef int distance_type;
     state_type_pointer      x,y;
     probability_type_pointer dtw;
 public:
-    DTW(int m, int n);
+    DTW(state_type*, int, state_type*, int);
+	DTW(){};
     ~DTW();
+	void input_state(state_type*, int, state_type*, int);
     probability_type DTW_process ( );
     distance_type get_distance(state_type,state_type); 
 };
