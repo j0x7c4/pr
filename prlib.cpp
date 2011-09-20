@@ -43,3 +43,8 @@ probability_type DTW::DTW_process ( )
 	}
 	return dtw[xn*yn]; //dtw[xn,yn];
 }
+
+DTW::distance_type DTW::get_distance(state_type x, state_type y)
+{
+	return x-y>0?x-y:y-x;
+}
