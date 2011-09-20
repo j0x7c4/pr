@@ -1,6 +1,5 @@
 #define INF 100000000
 typedef char state_type;
-typedef char*  state_type_pointer;
 typedef int probability_type;
 typedef int* probability_type_pointer;
 
@@ -10,7 +9,7 @@ class DTW
 {
 typedef int distance_type;
     int                     xn,yn;
-    state_type_pointer      x,y;
+    state_type      *x,*y;
     probability_type_pointer dtw;
 public:
     DTW(state_type*, int, state_type*, int);
