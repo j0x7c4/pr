@@ -1,9 +1,9 @@
 #define INF 100000000
-typedef int state_type;
-typedef (char*) state_type_pointer;
-typedef double probability_type;
-typedef (double*) probability_type_pointer;
-typedef (int**) probability_type_matrix;
+typedef char state_type;
+typedef char*  state_type_pointer;
+typedef int probability_type;
+typedef int* probability_type_pointer;
+
 
 
 class DTW
@@ -11,7 +11,7 @@ class DTW
 typedef int distance_type;
     int                     xn,yn;
     state_type_pointer      x,y;
-    probability_type_matrix dtw;
+    probability_type_pointer dtw;
 public:
     DTW(int m, int n);
     ~DTW();
