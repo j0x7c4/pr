@@ -1,9 +1,10 @@
-#define INF 100000000
+#include <iostream>
+#include <memory>
+
+#define INF 1000000
+
 typedef char state_type;
 typedef int probability_type;
-
-
-
 
 class DTW
 {
@@ -20,3 +21,20 @@ public:
     distance_type get_distance(state_type,state_type); 
 };
 
+class HMM
+{
+	int max_iters;
+	int iters;
+	int old_log_prob;
+	int M,N,T,*O;
+	double *A, *B , *pi;
+public:
+	HMM(int,int, int , int* , int _max_iters=10);
+	void forward_algorithm ( double*, double* );
+	void backward_algorithm ( double* , double*);
+	void compute_r ( double* , double*, double* , double* );
+	void estimate( double*, double* );
+	double compute_log_prob ( double* );
+	void learn_process( );
+	~HMM();
+};
